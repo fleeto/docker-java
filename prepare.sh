@@ -1,13 +1,11 @@
 #!/bin/sh
 set -xe
 VERSION="8"
-UPDATE="121"
-BUILD="13"
+UPDATE="171"
+BUILD="11"
 
 JAVA_TMP_DIR="/tmp/${PRODUCT}1.${VERSION}.0_${UPDATE}"
-
-
-JAVA_URL="http://download.oracle.com/otn-pub/java/jdk/"${VERSION}"u"${UPDATE}"-b"${BUILD}"/e9e7ea248e2c4826b92b3f075a80e441/${PRODUCT}-"${VERSION}"u"${UPDATE}"-linux-x64.tar.gz"
+JAVA_URL="http://download.oracle.com/otn-pub/java/jdk/"${VERSION}"u"${UPDATE}"-b"${BUILD}"/512cd62ec5174c3487ac17c61aaa89e8/${PRODUCT}-"${VERSION}"u"${UPDATE}"-linux-x64.tar.gz"
 JAVA_PATH="/usr/lib/java-${VERSION}-oracle"
 
 #PREPARE
@@ -16,7 +14,7 @@ SIG=`cat /etc/*release | grep  ^NAME | cut -c7`
 
 # Alpine
 if [ $SIG = "A" ]; then
-  GLIBC_VERSION="2.25-r0"
+  GLIBC_VERSION="2.27-r0"
   apk update
   apk upgrade
   apk add --update --progress openssl curl tzdata

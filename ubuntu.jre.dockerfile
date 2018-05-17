@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:xenial
 ENV TIMEZONE="Asia/Shanghai" \
 PRODUCT="jre" \
 JAVA_HOME="/usr/lib/java"
